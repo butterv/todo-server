@@ -5,39 +5,63 @@ package todo;
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
-message CreateTodoRequest {
-    string title = 1;
-    string project = 2;
-    string label = 3;
+message ScheduledDate {
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
 }
 
-message UpdateTodoRequest {
+message Todo {
     string id = 1;
     string title = 2;
     string project = 3;
     string label = 4;
+    string description = 5;
+    ScheduledDate scheduled_date = 6;
+}
+
+message CreateTodoRequest {
+    Todo todo = 1;
+}
+
+message UpdateTodoRequest {
+    Todo todo = 1;
 }
 
 message DeleteTodoRequest {
     string id = 1;
 }
 
+message GetTodosRequest {
+    ScheduledDate start_date = 1;
+    ScheduledDate end_date = 2;
+}
+
+message GetTodosResponse {
+    repeated Todo todos = 1;
+}
+
 service TodoService {
-    rpc CreateUser(CreateTodoRequest) returns (google.protobuf.Empty) {
+    rpc CreateTodo(CreateTodoRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             post: "/v1/todo"
             body: "*"
         };
     }
-    rpc ChangeEmail(UpdateTodoRequest) returns (google.protobuf.Empty) {
+    rpc UpdateTodo(UpdateTodoRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             put: "/v1/todo"
             body: "*"
         };
     }
-    rpc ChangePassword(DeleteTodoRequest) returns (google.protobuf.Empty) {
+    rpc DeleteTodo(DeleteTodoRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/todo/{id}"
+        };
+    }
+    rpc GetTodos(GetTodosRequest) returns (GetTodosResponse) {
+        option (google.api.http) = {
+            get: "/v1/todos"
         };
     }
 }
