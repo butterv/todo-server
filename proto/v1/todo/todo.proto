@@ -5,37 +5,39 @@ package todo;
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
-message CreateUserRequest {
-    string email = 1;
-    string password = 2;
+message CreateTodoRequest {
+    string title = 1;
+    string project = 2;
+    string label = 3;
 }
 
-message ChangeEmailRequest {
-    string new_email = 1;
+message UpdateTodoRequest {
+    string id = 1;
+    string title = 2;
+    string project = 3;
+    string label = 4;
 }
 
-message ChangePasswordRequest {
-    string current_password = 1;
-    string new_password = 2;
+message DeleteTodoRequest {
+    string id = 1;
 }
 
-service UserService {
-    rpc CreateUser(CreateUserRequest) returns (google.protobuf.Empty) {
+service TodoService {
+    rpc CreateUser(CreateTodoRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            post: "/v1/user/create"
+            post: "/v1/todo"
             body: "*"
         };
     }
-    rpc ChangeEmail(ChangeEmailRequest) returns (google.protobuf.Empty) {
+    rpc ChangeEmail(UpdateTodoRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            put: "/v1/user/email/change"
+            put: "/v1/todo"
             body: "*"
         };
     }
-    rpc ChangePassword(ChangePasswordRequest) returns (google.protobuf.Empty) {
+    rpc ChangePassword(DeleteTodoRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            put: "/v1/user/password/change"
-            body: "*"
+            delete: "/v1/todo/{id}"
         };
     }
 }
