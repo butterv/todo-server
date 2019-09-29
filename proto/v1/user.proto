@@ -1,8 +1,8 @@
 syntax = "proto3";
+
 package user;
 
 import "google/api/annotations.proto";
-
 import "google/protobuf/empty.proto";
 
 message CreateUserRequest {
