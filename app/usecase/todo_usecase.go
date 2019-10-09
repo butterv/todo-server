@@ -9,10 +9,10 @@ import (
 // UserUsecase is an user usecase.
 type TodoUsecase interface {
 	CreateTodo(title string, project, label, description *string, scheduledDate *time.Time) (*model.Todo, error)
-	GetIncompletTodosByUserID(userID model.UserID) ([]*model.Todo, error)
-	GetIncompletTodosByProject(userID model.Todo, project string) ([]*model.Todo, error)
-	GetIncompletTodosByLabel(userID model.Todo, label string) ([]*model.Todo, error)
-	GetIncompletTodosByScheduledDate(userID model.Todo, scheduledDate time.Time) ([]*model.Todo, error)
+	GetIncompleteTodosByUserID(userID model.UserID) ([]*model.Todo, error)
+	GetIncompleteTodosByProject(userID model.Todo, project string) ([]*model.Todo, error)
+	GetIncompleteTodosByLabel(userID model.Todo, label string) ([]*model.Todo, error)
+	GetIncompleteTodosByScheduledDate(userID model.Todo, scheduledDate time.Time) ([]*model.Todo, error)
 	GetCompletedTodosByUserID(userID model.Todo) ([]*model.Todo, error)
 	UpdateTitle(todoID model.TodoID, title string) error
 	UpdateProject(todoID model.TodoID, project *string) error
