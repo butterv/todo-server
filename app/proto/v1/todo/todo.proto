@@ -3,7 +3,6 @@ syntax = "proto3";
 package todo;
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
 
 message ScheduledDate {
     int32 year = 1;
