@@ -24,11 +24,21 @@ message CreateTodoRequest {
     Todo todo = 1;
 }
 
+message CreateTodoResponse {
+}
+
 message UpdateTodoRequest {
     Todo todo = 1;
 }
 
+message UpdateTodoResponse {
+}
+
 message DeleteTodoRequest {
+    string id = 1;
+}
+
+message DeleteTodoResponse {
     string id = 1;
 }
 
@@ -42,19 +52,19 @@ message GetTodosResponse {
 }
 
 service TodoService {
-    rpc CreateTodo(CreateTodoRequest) returns (google.protobuf.Empty) {
+    rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse) {
         option (google.api.http) = {
             post: "/v1/todo"
             body: "*"
         };
     }
-    rpc UpdateTodo(UpdateTodoRequest) returns (google.protobuf.Empty) {
+    rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse) {
         option (google.api.http) = {
             put: "/v1/todo"
             body: "*"
         };
     }
-    rpc DeleteTodo(DeleteTodoRequest) returns (google.protobuf.Empty) {
+    rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse) {
         option (google.api.http) = {
             delete: "/v1/todo/{id}"
         };
