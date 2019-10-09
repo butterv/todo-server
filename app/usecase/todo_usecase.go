@@ -6,7 +6,7 @@ import (
 	"github.com/istsh/todo-sample/app/domain/model"
 )
 
-// UserUsecase is an user usecase.
+// TodoUsecase is an todo usecase.
 type TodoUsecase interface {
 	CreateTodo(title string, project, label, description *string, scheduledDate *time.Time) (*model.Todo, error)
 	GetIncompleteTodosByUserID(userID model.UserID) ([]*model.Todo, error)

@@ -2,7 +2,7 @@ package repository
 
 import "github.com/istsh/todo-sample/app/domain/model"
 
-// UserEmailRepositoryRefer is a readonly repository for user passwords.
+// UserPasswordRepositoryRefer is a readonly repository for user passwords.
 type UserPasswordRepositoryRefer interface {
 	FindByUserID(userID model.UserID) (*model.UserPassword, error)
 }
