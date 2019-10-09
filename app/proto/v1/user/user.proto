@@ -3,15 +3,20 @@ syntax = "proto3";
 package user;
 
 import "google/api/annotations.proto";
-import "google/protobuf/empty.proto";
 
 message CreateUserRequest {
     string email = 1;
     string password = 2;
 }
 
+message CreateUserResponse {
+}
+
 message ChangeEmailRequest {
     string new_email = 1;
+}
+
+message ChangeEmailResponse {
 }
 
 message ChangePasswordRequest {
@@ -19,20 +24,23 @@ message ChangePasswordRequest {
     string new_password = 2;
 }
 
+message ChangePasswordResponse {
+}
+
 service UserService {
-    rpc CreateUser(CreateUserRequest) returns (google.protobuf.Empty) {
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {
         option (google.api.http) = {
             post: "/v1/user/create"
             body: "*"
         };
     }
-    rpc ChangeEmail(ChangeEmailRequest) returns (google.protobuf.Empty) {
+    rpc ChangeEmail(ChangeEmailRequest) returns (ChangeEmailResponse) {
         option (google.api.http) = {
             put: "/v1/user/email/change"
             body: "*"
         };
     }
-    rpc ChangePassword(ChangePasswordRequest) returns (google.protobuf.Empty) {
+    rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse) {
         option (google.api.http) = {
             put: "/v1/user/password/change"
             body: "*"
