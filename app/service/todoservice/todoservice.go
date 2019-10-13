@@ -3,7 +3,8 @@ package todoservice
 import (
 	"context"
 
-	pb "github.com/istsh/todo-server/app/proto/v1/todo"
+	pb2 "github.com/istsh/todo-server/app/proto/v1/pb"
+
 	"github.com/istsh/todo-server/app/repository"
 )
 
@@ -19,18 +20,18 @@ func New(r repository.Repository) *TodoService {
 	}
 }
 
-func (*TodoService) CreateTodo(context.Context, *pb.CreateTodoRequest) (*pb.CreateTodoResponse, error) {
+func (*TodoService) CreateTodo(context.Context, *pb2.CreateTodoRequest) (*pb2.CreateTodoResponse, error) {
 	return nil, nil
 }
 
-func (*TodoService) UpdateTodo(context.Context, *pb.UpdateTodoRequest) (*pb.UpdateTodoResponse, error) {
+func (*TodoService) UpdateTodo(context.Context, *pb2.UpdateTodoRequest) (*pb2.UpdateTodoResponse, error) {
 	return nil, nil
 }
 
-func (*TodoService) DeleteTodo(context.Context, *pb.DeleteTodoRequest) (*pb.DeleteTodoResponse, error) {
+func (*TodoService) DeleteTodo(context.Context, *pb2.DeleteTodoRequest) (*pb2.DeleteTodoResponse, error) {
 	return nil, nil
 }
 
-func (*TodoService) GetTodos(context.Context, *pb.GetTodosRequest) (*pb.GetTodosResponse, error) {
+func (*TodoService) GetTodos(context.Context, *pb2.GetTodosRequest) (*pb2.GetTodosResponse, error) {
 	return nil, nil
 }
