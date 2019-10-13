@@ -3,7 +3,8 @@ package userservice
 import (
 	"context"
 
-	pb "github.com/istsh/todo-server/app/proto/v1/user"
+	pb2 "github.com/istsh/todo-server/app/proto/v1/pb"
+
 	"github.com/istsh/todo-server/app/repository"
 )
 
@@ -19,14 +20,14 @@ func New(r repository.Repository) *UserService {
 	}
 }
 
-func (*UserService) CreateUser(context.Context, *pb.CreateUserRequest) (*pb.CreateUserResponse, error) {
+func (*UserService) CreateUser(context.Context, *pb2.CreateUserRequest) (*pb2.CreateUserResponse, error) {
 	return nil, nil
 }
 
-func (*UserService) ChangeEmail(context.Context, *pb.ChangeEmailRequest) (*pb.ChangeEmailResponse, error) {
+func (*UserService) ChangeEmail(context.Context, *pb2.ChangeEmailRequest) (*pb2.ChangeEmailResponse, error) {
 	return nil, nil
 }
 
-func (*UserService) ChangePassword(context.Context, *pb.ChangePasswordRequest) (*pb.ChangePasswordResponse, error) {
+func (*UserService) ChangePassword(context.Context, *pb2.ChangePasswordRequest) (*pb2.ChangePasswordResponse, error) {
 	return nil, nil
 }
