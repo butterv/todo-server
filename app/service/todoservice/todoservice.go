@@ -3,8 +3,8 @@ package todoservice
 import (
 	"context"
 
-	pb "github.com/istsh/todo-sample/app/proto/v1/todo"
-	"github.com/istsh/todo-sample/app/repository"
+	pb "github.com/istsh/todo-server/app/proto/v1/todo"
+	"github.com/istsh/todo-server/app/repository"
 )
 
 // TodoService provides a set of RPC methods.

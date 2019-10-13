@@ -3,7 +3,7 @@ package repository
 import (
 	"time"
 
-	"github.com/istsh/todo-sample/app/domain/model"
+	"github.com/istsh/todo-server/app/domain/model"
 )
 
 // TodoRepositoryRefer is a readonly repository for todos.

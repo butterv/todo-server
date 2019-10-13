@@ -1,6 +1,6 @@
 package usecase
 
-import "github.com/istsh/todo-sample/app/domain/model"
+import "github.com/istsh/todo-server/app/domain/model"
 
 // UserUsecase is an user usecase.
 type UserUsecase interface {

@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/istsh/todo-sample/app/domain/model"
+import "github.com/istsh/todo-server/app/domain/model"
 
 // UserPasswordRepositoryRefer is a readonly repository for user passwords.
 type UserPasswordRepositoryRefer interface {

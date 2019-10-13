@@ -6,11 +6,11 @@ import (
 
 	"google.golang.org/grpc"
 
-	todopb "github.com/istsh/todo-sample/app/proto/v1/todo"
-	userpb "github.com/istsh/todo-sample/app/proto/v1/user"
-	"github.com/istsh/todo-sample/app/repository"
-	"github.com/istsh/todo-sample/app/service/todoservice"
-	"github.com/istsh/todo-sample/app/service/userservice"
+	todopb "github.com/istsh/todo-server/app/proto/v1/todo"
+	userpb "github.com/istsh/todo-server/app/proto/v1/user"
+	"github.com/istsh/todo-server/app/repository"
+	"github.com/istsh/todo-server/app/service/todoservice"
+	"github.com/istsh/todo-server/app/service/userservice"
 )
 
 func main() {

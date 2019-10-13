@@ -3,8 +3,8 @@ package userservice
 import (
 	"context"
 
-	pb "github.com/istsh/todo-sample/app/proto/v1/user"
-	"github.com/istsh/todo-sample/app/repository"
+	pb "github.com/istsh/todo-server/app/proto/v1/user"
+	"github.com/istsh/todo-server/app/repository"
 )
 
 // UserService provides a set of RPC methods.

@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/istsh/todo-sample/app/domain/model"
+import "github.com/istsh/todo-server/app/domain/model"
 
 // UserEmailRepositoryRefer is a readonly repository for user emails.
 type UserEmailRepositoryRefer interface {
