@@ -4,10 +4,9 @@ import (
 	"log"
 	"net"
 
-	"github.com/istsh/todo-server/app/proto/v1/pb"
-
 	"google.golang.org/grpc"
 
+	"github.com/istsh/todo-server/app/proto/v1/pb"
 	"github.com/istsh/todo-server/app/repository"
 	"github.com/istsh/todo-server/app/service/todoservice"
 	"github.com/istsh/todo-server/app/service/userservice"
