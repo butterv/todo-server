@@ -4,10 +4,10 @@ import (
 	"log"
 	"net"
 
+	"github.com/istsh/todo-server/app/proto/v1/pb"
+
 	"google.golang.org/grpc"
 
-	todopb "github.com/istsh/todo-server/app/proto/v1/todo"
-	userpb "github.com/istsh/todo-server/app/proto/v1/user"
 	"github.com/istsh/todo-server/app/repository"
 	"github.com/istsh/todo-server/app/service/todoservice"
 	"github.com/istsh/todo-server/app/service/userservice"
@@ -31,10 +31,10 @@ func NewServer(r repository.Repository) *grpc.Server {
 	s := grpc.NewServer(ops...)
 
 	todoService := todoservice.New(r)
-	todopb.RegisterTodoServiceServer(s, todoService)
+	pb.RegisterTodoServiceServer(s, todoService)
 
 	userService := userservice.New(r)
-	userpb.RegisterUserServiceServer(s, userService)
+	pb.RegisterUserServiceServer(s, userService)
 
 	return s
 }
