@@ -1,12 +1,15 @@
 package usecase
 
-import "github.com/istsh/todo-server/app/domain/model"
+import (
+	"context"
 
-// UserUsecase is an user usecase.
-type UserUsecase interface {
-	RegisterUser(email, password string) (*model.User, error)
-	GetUser(userID model.UserID) (*model.User, error)
-	IsCorrectPassword(email, password string) (bool, error)
-	ChangeEmail(userID model.UserID, email string) error
-	ChangePassword(userID model.UserID, currentPassword, newPassword string) error
+	"github.com/istsh/go-grpc-sample/app/entity/model"
+	"github.com/istsh/go-grpc-sample/app/entity/repository"
+)
+
+type UserUserCase interface {
+	CreateUser(ctx context.Context, tx repository.Transaction, email, password string) error
+	IsCorrectUserPassword(ctx context.Context, con repository.Connection, userID model.UserID, password string) (bool, error)
+
+	CreateUserToken(ctx context.Context, tx repository.Transaction, userID model.UserID) (string, error)
 }
