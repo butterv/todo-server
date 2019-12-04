@@ -14,7 +14,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 
-	appstatus "github.com/istsh/go-grpc-sample/app/status"
+	appstatus "github.com/istsh/todo-server/app/status"
 )
 
 type args struct {

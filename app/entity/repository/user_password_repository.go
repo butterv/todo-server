@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/istsh/go-grpc-sample/app/entity/model"
+	"github.com/istsh/todo-server/app/entity/model"
 )
 
 // UserPasswordRepositoryAccess is a readonly repository for user passwords.

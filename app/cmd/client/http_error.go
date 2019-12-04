@@ -11,8 +11,8 @@ import (
 	"google.golang.org/grpc/grpclog"
 	"google.golang.org/grpc/status"
 
-	errorpb "github.com/istsh/go-grpc-sample/app/pb/v1/error"
-	appstatus "github.com/istsh/go-grpc-sample/app/status"
+	errorpb "github.com/istsh/todo-server/app/pb/v1/error"
+	appstatus "github.com/istsh/todo-server/app/status"
 )
 
 // DefaultHTTPError is the default implementation of HTTPError.

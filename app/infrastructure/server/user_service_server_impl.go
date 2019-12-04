@@ -3,11 +3,11 @@ package server
 import (
 	"context"
 
-	"github.com/istsh/go-grpc-sample/app/entity/repository"
-	userpb "github.com/istsh/go-grpc-sample/app/pb/v1/user"
-	appstatus "github.com/istsh/go-grpc-sample/app/status"
-	"github.com/istsh/go-grpc-sample/app/usecase"
-	"github.com/istsh/go-grpc-sample/app/util/log"
+	"github.com/istsh/todo-server/app/entity/repository"
+	userpb "github.com/istsh/todo-server/app/pb/v1/user"
+	appstatus "github.com/istsh/todo-server/app/status"
+	"github.com/istsh/todo-server/app/usecase"
+	"github.com/istsh/todo-server/app/util/log"
 )
 
 const (

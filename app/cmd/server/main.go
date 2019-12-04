@@ -13,13 +13,13 @@ import (
 	_ "google.golang.org/grpc/encoding/gzip"
 	"google.golang.org/grpc/reflection"
 
-	"github.com/istsh/go-grpc-sample/app/entity/repository"
-	"github.com/istsh/go-grpc-sample/app/infrastructure/interceptor"
-	"github.com/istsh/go-grpc-sample/app/infrastructure/repository/persistence"
-	"github.com/istsh/go-grpc-sample/app/infrastructure/server"
-	loginpb "github.com/istsh/go-grpc-sample/app/pb/v1/login"
-	userpb "github.com/istsh/go-grpc-sample/app/pb/v1/user"
-	"github.com/istsh/go-grpc-sample/app/usecase"
+	"github.com/istsh/todo-server/app/entity/repository"
+	"github.com/istsh/todo-server/app/infrastructure/interceptor"
+	"github.com/istsh/todo-server/app/infrastructure/repository/persistence"
+	"github.com/istsh/todo-server/app/infrastructure/server"
+	loginpb "github.com/istsh/todo-server/app/pb/v1/login"
+	userpb "github.com/istsh/todo-server/app/pb/v1/user"
+	"github.com/istsh/todo-server/app/usecase"
 )
 
 func connectDB() *gorm.DB {

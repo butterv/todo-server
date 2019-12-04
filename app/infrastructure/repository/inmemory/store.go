@@ -1,6 +1,6 @@
 package inmemory
 
-import "github.com/istsh/go-grpc-sample/app/entity/model"
+import "github.com/istsh/todo-server/app/entity/model"
 
 // NewStore creates a new store.
 func NewStore() *Store {

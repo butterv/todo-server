@@ -7,7 +7,7 @@ import (
 
 	"google.golang.org/grpc/metadata"
 
-	"github.com/istsh/go-grpc-sample/app/util/requestid"
+	"github.com/istsh/todo-server/app/util/requestid"
 )
 
 // RequestIDAnnotator takes requestID from http request header and sets it to metadata.

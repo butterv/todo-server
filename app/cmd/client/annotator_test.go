@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/istsh/go-grpc-sample/app/util/requestid"
+	"github.com/istsh/todo-server/app/util/requestid"
 )
 
 func TestRequestIDAnnotator_NewRequestID(t *testing.T) {

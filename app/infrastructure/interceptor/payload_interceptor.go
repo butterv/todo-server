@@ -17,7 +17,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 
-	"github.com/istsh/go-grpc-sample/app/util/requestid"
+	"github.com/istsh/todo-server/app/util/requestid"
 )
 
 var (

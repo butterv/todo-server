@@ -5,7 +5,7 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	errorpb "github.com/istsh/go-grpc-sample/app/pb/v1/error"
+	errorpb "github.com/istsh/todo-server/app/pb/v1/error"
 )
 
 const (

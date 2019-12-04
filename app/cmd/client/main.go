@@ -14,9 +14,9 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/encoding/gzip"
 
-	"github.com/istsh/go-grpc-sample/app/infrastructure/interceptor"
-	loginpb "github.com/istsh/go-grpc-sample/app/pb/v1/login"
-	userpb "github.com/istsh/go-grpc-sample/app/pb/v1/user"
+	"github.com/istsh/todo-server/app/infrastructure/interceptor"
+	loginpb "github.com/istsh/todo-server/app/pb/v1/login"
+	userpb "github.com/istsh/todo-server/app/pb/v1/user"
 )
 
 var (

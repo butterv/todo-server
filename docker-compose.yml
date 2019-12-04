@@ -13,7 +13,7 @@ services:
       context: .
       target: builder
     volumes:
-      - ./app:/go/src/github.com/istsh/go-grpc-sample/app
+      - ./app:/go/src/github.com/istsh/todo-server/app
     tty: true
     depends_on:
       - db
@@ -25,7 +25,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./app:/go/src/github.com/istsh/go-grpc-sample/app
+      - ./app:/go/src/github.com/istsh/todo-server/app
     tty: true
     depends_on:
       - grpc-server

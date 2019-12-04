@@ -3,7 +3,7 @@ package persistence
 import (
 	"github.com/jinzhu/gorm"
 
-	"github.com/istsh/go-grpc-sample/app/entity/repository"
+	"github.com/istsh/todo-server/app/entity/repository"
 )
 
 type dbRepository struct {

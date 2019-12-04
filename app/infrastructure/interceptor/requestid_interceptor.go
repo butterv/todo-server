@@ -5,8 +5,8 @@ import (
 
 	"google.golang.org/grpc"
 
-	"github.com/istsh/go-grpc-sample/app/util/log"
-	"github.com/istsh/go-grpc-sample/app/util/requestid"
+	"github.com/istsh/todo-server/app/util/log"
+	"github.com/istsh/todo-server/app/util/requestid"
 )
 
 // RequestIDInterceptor is a interceptor of access control list.

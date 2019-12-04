@@ -11,8 +11,8 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/istsh/go-grpc-sample/app/entity/model"
-	"github.com/istsh/go-grpc-sample/app/entity/repository"
+	"github.com/istsh/todo-server/app/entity/model"
+	"github.com/istsh/todo-server/app/entity/repository"
 )
 
 type userUserCase struct {
