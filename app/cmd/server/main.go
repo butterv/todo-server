@@ -24,7 +24,7 @@ import (
 )
 
 func connectDB() *gorm.DB {
-	db, err := gorm.Open("mysql", "root:password@tcp(db)/sample?charset=utf8mb4&parseTime=True&loc=UTC")
+	db, err := gorm.Open("mysql", "root:password@tcp(db)/todo?charset=utf8mb4&parseTime=True&loc=UTC")
 	if err != nil {
 		panic(err.Error())
 	}
