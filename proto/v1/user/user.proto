@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package user;
-option go_package = "github.com/istsh/todo-server/app/pb/v1/todo";
+option go_package = "github.com/istsh/todo-server/app/pb/v1/user";
 
 import "google/api/annotations.proto";
 import "validate/validate.proto";
@@ -9,7 +9,7 @@ import "validate/validate.proto";
 service UserService {
     rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {
         option (google.api.http) = {
-            post: "/v1/user"
+            post: "/v1/users"
             body: "*"
         };
     }

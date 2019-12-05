@@ -54,19 +54,19 @@ message GetTodosResponse {
 service TodoService {
     rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse) {
         option (google.api.http) = {
-            post: "/v1/todo"
+            post: "/v1/todos"
             body: "*"
         };
     }
     rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse) {
         option (google.api.http) = {
-            put: "/v1/todo"
+            put: "/v1/todos"
             body: "*"
         };
     }
     rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse) {
         option (google.api.http) = {
-            delete: "/v1/todo/{id}"
+            delete: "/v1/todos/{id}"
         };
     }
     rpc GetTodos(GetTodosRequest) returns (GetTodosResponse) {
