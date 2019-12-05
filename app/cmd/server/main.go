@@ -18,6 +18,7 @@ import (
 	"github.com/istsh/todo-server/app/infrastructure/repository/persistence"
 	"github.com/istsh/todo-server/app/infrastructure/server"
 	loginpb "github.com/istsh/todo-server/app/pb/v1/login"
+	todopb "github.com/istsh/todo-server/app/pb/v1/todo"
 	userpb "github.com/istsh/todo-server/app/pb/v1/user"
 	"github.com/istsh/todo-server/app/usecase"
 )
@@ -42,6 +43,7 @@ func newGRPCServer(r repository.Repository, u usecase.UserUserCase) *grpc.Server
 	)
 
 	loginpb.RegisterLoginServiceServer(s, server.NewLoginServiceServer(r, u))
+	todopb.RegisterTodoServiceServer(s, server.NewTodoServiceServer(r, u))
 	userpb.RegisterUserServiceServer(s, server.NewUserServiceServer(r, u))
 
 	return s

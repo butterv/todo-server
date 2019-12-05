@@ -16,6 +16,7 @@ import (
 
 	"github.com/istsh/todo-server/app/infrastructure/interceptor"
 	loginpb "github.com/istsh/todo-server/app/pb/v1/login"
+	todopb "github.com/istsh/todo-server/app/pb/v1/todo"
 	userpb "github.com/istsh/todo-server/app/pb/v1/user"
 )
 
@@ -52,7 +53,9 @@ func registerServiceHandlers(ctx context.Context, mux *runtime.ServeMux) error {
 	if err := loginpb.RegisterLoginServiceHandlerFromEndpoint(ctx, mux, *grpcServerEndpoint, opts); err != nil {
 		return err
 	}
-
+	if err := todopb.RegisterTodoServiceHandlerFromEndpoint(ctx, mux, *grpcServerEndpoint, opts); err != nil {
+		return err
+	}
 	if err := userpb.RegisterUserServiceHandlerFromEndpoint(ctx, mux, *grpcServerEndpoint, opts); err != nil {
 		return err
 	}
