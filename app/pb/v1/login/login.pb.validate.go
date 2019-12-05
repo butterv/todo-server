@@ -44,19 +44,9 @@ func (m *LoginRequest) Validate() error {
 		return nil
 	}
 
-	if l := utf8.RuneCountInString(m.GetEmail()); l < 3 || l > 254 {
-		return LoginRequestValidationError{
-			field:  "Email",
-			reason: "value length must be between 3 and 254 runes, inclusive",
-		}
-	}
+	// no validation rules for Email
 
-	if l := utf8.RuneCountInString(m.GetPassword()); l < 8 || l > 64 {
-		return LoginRequestValidationError{
-			field:  "Password",
-			reason: "value length must be between 8 and 64 runes, inclusive",
-		}
-	}
+	// no validation rules for Password
 
 	return nil
 }

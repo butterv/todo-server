@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package todo;
+option go_package = "github.com/istsh/todo-server/app/pb/v1/todo";
+
+import "google/api/annotations.proto";
+
+message ScheduledDate {
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
+}
+
+message Todo {
+    string id = 1;
+    string title = 2;
+    string project = 3;
+    string label = 4;
+    string description = 5;
+    ScheduledDate scheduled_date = 6;
+}
+
+message CreateTodoRequest {
+    Todo todo = 1;
+}
+
+message CreateTodoResponse {
+}
+
+message UpdateTodoRequest {
+    Todo todo = 1;
+}
+
+message UpdateTodoResponse {
+}
+
+message DeleteTodoRequest {
+    string id = 1;
+}
+
+message DeleteTodoResponse {
+    string id = 1;
+}
+
+message GetTodosRequest {
+    ScheduledDate start_date = 1;
+    ScheduledDate end_date = 2;
+}
+
+message GetTodosResponse {
+    repeated Todo todos = 1;
+}
+
+service TodoService {
+    rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse) {
+        option (google.api.http) = {
+            post: "/v1/todo"
+            body: "*"
+        };
+    }
+    rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse) {
+        option (google.api.http) = {
+            put: "/v1/todo"
+            body: "*"
+        };
+    }
+    rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse) {
+        option (google.api.http) = {
+            delete: "/v1/todo/{id}"
+        };
+    }
+    rpc GetTodos(GetTodosRequest) returns (GetTodosResponse) {
+        option (google.api.http) = {
+            get: "/v1/todos"
+        };
+    }
+}
